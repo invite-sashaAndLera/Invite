@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invite wedding</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="envelope-wrapper" id="envelope">
+    <div class="envelope">
+      <div class="flap" id="letter"></div>
+      <div class="body"></div>
+      <button class="open-btn" onclick="openEnvelope()">Открыть</button>
+    </div>
+  </div>
+
+  <div class="invitation hidden" id="invitation">
+    <div class="message">Вас пригласили на торжество!</div>
+  </div>
+
+  <div class="wrapper">
+    <div class="wrapper-top">
+      <div class="wrapper-sasha-lera">
+        <div class="wrapper-sasha">
+          <img class="sasha" src="./assets/sasha.jpg" alt="sasha" />
+          <span class="sasha-text">Саша</span>
+        </div>
+        <img src="./assets/plusik.svg" alt="plusik" class="plusik" />
+        <div class="wrapper-lera">
+          <img class="lera" src="./assets/lera.jpg" alt="lera" />
+          <span class="lera-text">Лера</span>
+        </div>
+      </div>
+      <img src="./assets/Radyga.svg" alt="radyga" class="radyga" />
+      <img src="./assets/dogdik.svg" alt="dogdik" class="dogdik" />
+      <img src="./assets/Cvetochek.svg" alt="Cvetochek" class="Cvetochek" />
+    </div>
+    <div class="wrapper-strelochka">
+      <img src="./assets/ctrelochka.webp" alt="strelochka" class="strelochka" />
+    </div>
+    <div class="wrapper-text fade-in">
+      <span class="wrapper-title">Узнаете этих непосед?</span>
+      <span class="wrapper-text">Да-да, это мы! Как быстро летит время, не правда ли? Теперь, когда мы уже взрослые, мы решили, что пора создавать свою семью! Приглашаем вас разделить с нами радость первого семейного праздника — нашей свадьбы! Мы будем счастливы, если вы разделите этот день с нами.</span>
+      <img src="./assets/polaroid.svg" alt="polaroid" class="polaroid" />
+      <img src="./assets/together.jpg" alt="together" class="together" />
+    </div>
+    <div class="wrapper-strelochka">
+      <img src="./assets/ctrelochka.webp" alt="strelochka" class="strelochka" />
+    </div>
+    <div class="wrapper-date fade-in">
+      <span class="wrapper-date-text">Дата свадьбы</span>
+      <div class="calendar-wrapper">
+        <img src="./assets/calendar.png" alt="calendar" class="calendar" />
+        <img src="./assets/red.svg" alt="red" class="red" />
+        <span class="four">4</span>
+      </div>
+    </div>
+    <div class="wrapper-text fade-in">
+      <span class="wrapper-title"></span>
+      <span class="wrapper-text">
+      </span>
+      <span class="author"></span>
+    </div>
+    <div class="wrapper-map">
+      <span class="wrapper-title">Место проведения</span>
+      <span class="map-text">Банкетный зал «Версаль» Крупской ул., 8/5, Краснодар</span>
+      <button class="btn-map" onclick="openMap()">Открыть карту</button>
+    </div>
+    <div class="programm-day">
+      <div class="programm">
+        <div class="time">16:00</div>
+        <img src="./assets/yellow.svg" alt="yellow" class="yellow" />
+        <div class="text-block">
+          <div class="title">Сбор гостей</div>
+          <div class="description">Мы соберемся вместе, обменяемся улыбками и радостью</div>
+        </div>
+      </div>
+      <div class="programm">
+        <div class="time">16:30</div>
+        <img src="./assets/yellow.svg" alt="yellow" class="yellow" />
+        <div class="text-block">
+          <div class="title">Церемония</div>
+          <div class="description">Нас ожидает торжественная и незабываемая церемония росписи</div>
+        </div>
+      </div>
+      <div class="programm">
+        <div class="time">17:00</div>
+        <img src="./assets/yellow.svg" alt="yellow" class="yellow" />
+        <div class="text-block">
+          <div class="title">Банкет</div>
+          <div class="description">Готовьте удобные туфли и хорошее настроение, обещаем, что скучно не будет</div>
+        </div>
+      </div>
+      <div class="programm">
+        <div class="time">23:00</div>
+        <img src="./assets/yellow.svg" alt="yellow" class="yellow" />
+        <div class="text-block">
+          <div class="title">Завершение</div>
+          <div class="description">К сожалению, даже такой прекрасный день может закончиться</div>
+        </div>
+      </div>
+    </div>
+    <div class="countdown-section">
+      <div class="wrapper-title" style="padding: 0 20px;">До торжества осталось:</div>
+
+      <div class="countdown-wrapper">
+        <div class="countdown-item">
+          <div id="days" class="count-number">00</div>
+          <div class="count-label">Дней</div>
+        </div>
+        <div class="countdown-item">
+          <div id="hours" class="count-number">00</div>
+          <div class="count-label">Часов</div>
+        </div>
+        <div class="countdown-item">
+          <div id="minutes" class="count-number">00</div>
+          <div class="count-label">Минут</div>
+        </div>
+        <div class="countdown-item">
+          <div id="seconds" class="count-number">00</div>
+          <div class="count-label">Секунд</div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-strelochka">
+      <img src="./assets/ctrelochka.webp" alt="strelochka" class="strelochka" />
+    </div>
+    <div class="slider-container fade-in">
+      <div class="slider">
+        <div class="slide"><img src="./assets/photo4.jpg" alt="Фото 1" /></div>
+        <div class="slide"><img src="./assets/photo3.jpg" alt="Фото 2" /></div>
+        <div class="slide"><img src="./assets/photo2.jpg" alt="Фото 3" /></div>
+        <div class="slide"><img src="./assets/photo1.jpg" alt="Фото 4" /></div>
+      </div>
+
+      <button class="nav prev">‹</button>
+      <button class="nav next">›</button>
+    </div>
+    <div class="wrapper-airplane">
+      <img src="./assets/airplane.svg" alt="airplane" class="airplane" />
+    </div>
+    <div class="wrapper-details fade-in">
+      <span class="wrapper-title">Пожелания</span>
+      <div class="details-wrapper">
+        <span class="wrapper-text">
+    
+        </span>
+        <img class="details" src="./assets/deatils.svg" />
+        <span class="wrapper-text">
+          Мы просим воздержаться от ярких цветов и броских принтов.Будем очень рады,если вы отдадите предвочтение нарядам спокойных и нейтральных тонах.  
+        </span>
+      </div>
+      <div class="details__wrapper-dresskod">
+        <img class="dresskod-color" src="./assets/dress-kod-1.svg" alt="">
+        <img class="dresskod-color" src="./assets/dress-kod-2.svg" alt="">
+        <img class="dresskod-color" src="./assets/dress-kod-3.svg" alt="">
+        <img class="dresskod-color" src="./assets/dress-kod-4.svg" alt="">
+        <img class="dresskod-color" src="./assets/dress-kod-5.svg" alt="">
+      </div>
+    </div>
+    <div class="wrapper-zabor">
+      <img src="./assets/zabor.svg" alt="zabor" class="zabor" />
+    </div>
+    <div class="wrapper-confirmation">
+      Просим вас подтвердить свое присутствие не позднее 10 августа 2025 года
+    </div>
+    <div class="wrapper-confirmation goodbye">
+      Ждем встречи с вами!
+    </div>
+  </div>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
